@@ -85,6 +85,32 @@
    \end {titlepage}
 }
 
+% \newcommand\@maketitlepage{
+%    \begin {titlepage}
+%       \ColumnSave
+%       \begin {center}
+%          \header{University of California} \\
+%          \normalsize Los Angeles \\
+%          \parbox[c][270pt][c]{\textwidth}{
+%              \begin{center}
+%              \@titlesize \@title
+%                  \end{center}
+%          }
+%          \normalsize A \@thesisname\
+%     submitted in partial satisfaction \\
+%          of the requirements for the degree \\
+%          \@degreename\if@department\ in \@department \fi\\
+%          \vskip 24pt plus0pt minus6pt
+%          by \\
+%          \vskip 24pt plus0pt minus6pt
+%          {\@author} \\
+%          \vskip78pt
+%          {\normalsize \@degreeyear}
+%       \end {center}
+%       \ColumnRestore
+%    \end {titlepage}
+% }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %								       %
 %			    COPYRIGHT PAGE			       %
@@ -498,11 +524,20 @@
          \vskip 24pt minus 6pt
          \@title \\ \normalsize \normalfont
          \vskip 24pt minus 6pt
-		 by\\
-		 \vskip 24pt minus 6pt
+       by\\
+       \vskip 24pt minus 6pt
          \@author \normalsize \normalfont \\
          \@degreename\if@department\ in \@department \fi\\
          University of California, Los Angeles, \@degreeyear \\
+         % \header{Abstract of the \MakeUppercase{\@Thesisname}}\\[30pt]
+         % % 2016 Author name can no longer be in bold, or be larger
+         % % than surrounding text.
+         % {\@titlesize \@title}\\[24pt]
+         % \normalsize \normalfont by\\[24pt]
+         % {\@author} \\
+         % \normalsize \normalfont
+	      % \@degreename\if@department\ in \@department \fi\\
+         % University of California, Los Angeles, \@degreeyear \\
          \ifnum\c@chairs>2
             Professor \@chairA, Co-chair \\
             Professor \@chairB, Co-chair \\
@@ -515,7 +550,7 @@
          \else\typeout{No committee chair.}
          \fi\fi\fi
       \end{center}
-      \ifx\@spacing\@doublespacing\vskip 12pt\else\vskip 24pt\fi
+      \ifx\@spacing\@doublespacing\vskip 24pt\else\vskip 24pt\fi
       \renewcommand\baselinestretch{#1}\@normalsize
       %
       % Set up spacing.
