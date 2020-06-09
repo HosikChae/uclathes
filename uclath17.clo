@@ -110,6 +110,11 @@
 % (Note that LaTeX measurements start with a 1-inch top/left margin by default.)
 
 
+% PAPER SIZE
+% This ensures that the page size is 8.5 x 11 inches even if using a European TeX distribution (such as Overleaf)
+\paperheight 11in
+\paperwidth 8.5in
+
 % SIDE MARGINS:
 %\oddsidemargin 0in
 %\evensidemargin 0in    
